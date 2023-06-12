@@ -19,7 +19,8 @@ class Network:
             self.client.connect(self.addr)
             return self.client.recv(2048).decode()
         except socket.error as e:
-            pass
+            print(e)
+            return None
 
     def send(self, data):
         try:
